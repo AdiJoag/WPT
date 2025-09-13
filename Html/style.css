@@ -1,0 +1,47 @@
+*{
+    padding:0;
+    margin:0;
+   font-family: 'Courier New', Courier, monospace;  
+}
+.container {
+    padding: 30;
+  display:inline-block;
+  margin:  8rem 20rem ;
+  align-content: center;  
+  height: 25rem; 
+  width: 40rem;  
+  text-align: center;
+    background-color: rgb(166, 182, 228);
+    border:  solid;
+    border-radius: 1rem;
+    border-style: none;
+    font-weight: 900;
+}
+.pass,.name{
+    background-color: white;
+    height: 3rem;
+    width: 24rem;
+    text-align: left;
+    border-radius: .5rem;
+    border-style: none;
+    
+}
+
+#reset,#submit{
+    background-color: white;
+    height: 3rem;
+    width: 10rem;
+    border-radius: 0.5rem;
+    border-style: none;
+    text-transform: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+#reset:hover{
+    color:white;
+    background-color: black;
+}
+#submit:hover{
+    color:white;
+    background-color: black;
+}

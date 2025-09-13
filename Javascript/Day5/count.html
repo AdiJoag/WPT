@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        *{
+    padding:0;
+    margin:0;
+   font-family: 'Courier New', Courier, monospace;
+     
+}
+.container {
+    padding: 30;
+  display:inline-block;
+  margin:  8rem 20rem ;
+  align-content: center;  
+  height: 15rem; 
+  width: 40rem;  
+  text-align: center;
+    background-color: rgb(116, 127, 156);
+    border:  solid;	
+    border-radius: 1rem;
+    border-style: none;
+    font-weight: 900;
+}
+#H{
+    color: white;
+}
+.pass,.name{
+    background-color: white;
+    height: 3rem;	
+    width: 24rem;
+    text-align: left;
+    border-radius: .5rem;
+    border-style: none;
+    
+}#submit,#reset{
+    background-color: white;
+    height: 3rem;
+    width: 10rem;
+    border-radius: 0.5rem;
+    border-style: none;
+    text-transform: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+#reset:hover{
+     color:white;
+    background-color: black;
+    
+}
+#submit:hover{
+    color:white;
+    background-color: black;
+}
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <h1 id="H" id="reset">counter : </h1>
+   <br><br>
+        <button onclick="increment()" id="submit">Increment</button>
+         <button onclick="decrement()" id="submit">Decrement</button>
+          <button onclick="reset()" id="submit">Reset</button>
+    </div>
+</body>
+<script src="Counter.js"></script>
+</html>

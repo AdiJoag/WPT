@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Data</title>
+    <script>
+         function validate()
+        {
+            console.log("here")
+    var name = document.forms["form1"]["studName"].value
+            var age = document.forms["form1"]["studAge"].value
+            console.log(name,age)
+
+            if(name.trim()=="")
+            {
+    document.getElementsByClassName("errormessage")[0].style.visibility = 'visible'
+            }
+            else
+            document.getElementsByClassName("errormessage")[0].style.visibility = 'hidden'
+            if(age<10){
+               // alert("incorrect age") 
+        document.getElementsByClassName("errormessage")[1].style.visibility = 'visible'
+                return false;
+            }
+            else
+            {
+                document.getElementsByClassName("errormessage")[1].style.visibility = 'hidden'
+                document.forms["form1"].action="one.html"
+                return true;
+            } 
+
+        }
+
+        function do2()
+        {
+            document.forms["form1"].action="g.html"
+                document.forms["form1"].submit()
+            
+        }
+    </script>
+    
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="reg.css">
+</head>
+<body>
+    <div class="container">
+            <form action="">
+                <h2>User Registration &#128512</h2>
+                <label for="">First Name</label>
+                <input type="text"  class="fname" placeholder=" First name">&nbsp;
+                <BR></BR>
+                <label for="">Last Name</label>
+                <input type="text" class="lname" placeholder=" Last name">
+                <BR></BR>
+                <label for="" >&nbsp;&nbsp;&nbsp;&nbsp;Email</label>
+                <input type="email" class="email" placeholder="Email">
+                <BR></BR>
+                <label for="" >&nbsp;Phone No</label>
+                <input type="number" class="phn" placeholder=" Phone Number">
+                <BR></BR>
+                <label for="">&nbsp;&nbsp;&nbsp;&nbsp;D.O.B</label>
+                <input type="date"  class="dob" placeholder=" Date of Birth">
+                <br><br>
+                 <input type="reset" id="reset">
+                <input type="submit" id="submit">
+            </form>
+    </div>
+    <script>
+
+    </script>
+</body>
+</html>
+
+    
+
+    
+</body>
+</html>

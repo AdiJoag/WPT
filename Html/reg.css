@@ -1,0 +1,42 @@
+ .container{
+    padding: 30;
+    display:inline-block;
+    margin:  8rem 20rem ;
+    align-content: center;  
+    height: 25rem; 
+    width: 40rem;  
+    text-align: center;
+    background-color: rgb(162, 213, 255);
+    border:  solid;
+    border-radius: 1rem;
+    border-style: none;
+    font-family: 'Courier New', Courier, monospace;
+ }
+
+ .fname,.lname,.phn,.email,.dob,.oldpass,.newpass,.cpass{
+
+    background-color: white;
+    height: 2rem;
+    width: 20rem;
+    border-radius: 0.5rem;
+    padding-left: 50;
+    border-style: none;
+    }
+    
+    #reset,#submit{
+    background-color: white;
+    height: 2rem;
+    width: 8rem;
+    border-radius: 0.5rem;
+    border-style: none;
+    text-transform: none;
+    text-decoration: none;
+    }
+#reset:hover{
+    color:white;
+    background-color: black;
+}
+#submit:hover{
+    color:white;
+    background-color: black;
+}
