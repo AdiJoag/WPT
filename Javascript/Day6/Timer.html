@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        *{
+            padding:0;
+            margin:0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .container {
+                        padding: 30;
+                        margin:  8rem 20rem ;
+                        align-content: center;  
+                        height: 10rem; 
+                        width: 40rem;  
+                        text-align: center;
+                        background-color: rgb(135, 223, 179);
+                        border:  solid;	
+                        border-radius: 1rem;
+                        border-style: none;
+            }
+        </style>
+    </head>
+<body>
+    <div class="container">
+        <h2>This is Real Time : </h2>
+        <br>
+        <h2 id="time"></h2>
+    </div>
+
+<script>
+    setInterval(myFunction,1);
+    function myFunction() {
+        let timing = new Date();
+        document.getElementById("time").innerHTML= timing.getHours() + ":" +
+        timing.getMinutes() + ":" +timing.getSeconds();
+    }
+</script>
+</body>
+
+</html>

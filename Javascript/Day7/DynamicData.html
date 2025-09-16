@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Data</title>
+</head>
+<body>
+    <h2 id="display"></h2>
+    
+    <hr>
+   
+    <h2 id="data"></h2>
+
+    <script>
+
+        const fname = prompt("first name");
+        const lname = prompt("last name");
+        const age = prompt("age");
+
+        const user = fname+ lname + age; 
+        document.getElementById("display").innerHTML = `The first Content is: ${user}`;
+        const slicedata = fname.slice(0,2)+ lname.slice(lname.length - 2,lname.length)+age;
+    
+        document.getElementById("data").innerHTML = `The Copied Content is: ${slicedata}`;
+    </script>
+
+</body>
+</html>

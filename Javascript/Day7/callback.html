@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>settimeout and setinterval </title>
+</head>
+
+<body>
+
+    <h1>Check the Console</h1>
+
+    <script>
+        function First() {
+            console.log("Namaste Duniya after 2 seconds.");
+        }
+        let interval;
+        let counter = 0;
+
+        function Data() {
+            counter++;
+            console.log(`the ${counter}  interval`);
+
+            if (counter >= 2) {
+                clearInterval(interval);
+
+            }
+        }
+
+        setTimeout(First, 2000);
+        interval = setInterval(Data, 1000); 
+    </script>
+
+</body>
+
+</html>

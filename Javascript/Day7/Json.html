@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Data</title>
+</head>
+<body>
+
+    <h2>User Data</h2>
+    <form id="user-form">
+        <label for="firstName">First Name:</label><br>
+        <input type="text" id="firstName" name="firstName"><br><br>
+
+        <label for="lastName">Last Name:</label><br>
+        <input type="text" id="lastName" name="lastName"><br><br>
+
+        <label for="age">Age:</label><br>
+        <input type="number" id="age" name="age"><br><br>
+
+        <button type="button" onclick="displayData()">Submit</button>
+    </form>
+
+    <div id="table-container"></div>
+<script>
+    function displayData() {
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const age = document.getElementById('age').value;
+        const userData = {
+            firstName: firstName,
+            lastName: lastName,
+            age: parseInt(age)
+        };
+
+        
+        const userDataJSON = JSON.stringify(userData, null, 2);
+        
+       
+        const parsedData = JSON.parse(userDataJSON);
+        
+        
+        const tableContainer = document.getElementById('table-container');
+        let table = '<h3>User Data Table</h3>';
+        table += '<table border="1">';
+        
+        
+        table += '<thead><tr>';
+        for (const key in parsedData) {
+            table += '<th>' + key + '</th>';
+        }
+        table += '</tr></thead>';
+        
+        
+        table += '<tbody><tr>';
+        for (const key in parsedData) {
+            table += '<td>' + parsedData[key] + '</td>';
+        }
+        table += '</tr></tbody>';
+        
+        table += '</table>';
+        
+        tableContainer.innerHTML = table;
+    }
+</script>
+</body>
+</html>

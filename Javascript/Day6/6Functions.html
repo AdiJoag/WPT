@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator App</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Simple Calculator</h1>
+        <p>Enter two numbers and choose an operation.</p>
+        
+        <label for="num1">First Number:</label>
+        <input type="number" id="num1" value="0">
+        
+        <label for="num2">Second Number:</label>
+        <input type="number" id="num2" value="0">
+        
+        <label for="operation">Select Operation:</label>
+        <select id="operation">
+            <option value="addition">Addition (+)</option>
+            <option value="subtraction">Subtraction (-)</option>
+            <option value="multiply">Multiplication (*)</option>
+            <option value="division">Division (/)</option>
+        </select>
+        
+        <button onclick="performCalculation()">Calculate</button>
+        
+        <p id="result">Result will be displayed here.</p>
+    </div>
+
+    <script>
+        // The JavaScript functions you provided
+        function display(result) {
+            document.getElementById("result").textContent = "The result is: " + result;
+        }
+
+        function addition(n1, n2, callback) {
+            const sum = n1 + n2;
+            callback(sum);
+        }
+
+        function subtraction(n1, n2, callback) {
+            const difference = n1 - n2;
+            callback(difference);
+        }
+
+        function multiply(n1, n2, callback) {
+            const product = n1 * n2;
+            callback(product);
+        }
+
+        function division(n1, n2, callback) {
+            if (n2 === 0) {
+                callback("Error: Cannot divide by zero.");
+            } else {
+                const quotient = n1 / n2;
+                callback(quotient);
+            }
+        }
+
+        function calculate(n1, n2, operation, callback) {
+            switch (operation) {
+                case 'addition':
+                    addition(n1, n2, callback);
+                    break;
+                case 'subtraction':
+                    subtraction(n1, n2, callback);
+                    break;
+                case 'multiply':
+                    multiply(n1, n2, callback);
+                    break;
+                case 'division':
+                    division(n1, n2, callback);
+                    break;
+                default:
+                    callback("Error: Invalid operation.");
+            }
+        }
+
+        // Function to get user input and perform the calculation
+        function performCalculation() {
+            const num1 = parseFloat(document.getElementById("num1").value);
+            const num2 = parseFloat(document.getElementById("num2").value);
+            const operation = document.getElementById("operation").value;
+
+            // Check if the inputs are valid numbers
+            if (isNaN(num1) || isNaN(num2)) {
+                display("Please enter valid numbers.");
+                return;
+            }
+
+            // Call the calculate function with the user's choices
+            calculate(num1, num2, operation, display);
+        }
+    </script>
+
+</body>
+</html>

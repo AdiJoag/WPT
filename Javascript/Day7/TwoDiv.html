@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Effect</title>
+    <style>
+        body{
+            background-color: white;
+            color:black;
+        }
+        #d1{
+         background-color: rgb(0, 0, 0);
+         width: 60px;
+         height: 60px;
+         position: absolute;
+         border-radius: 20px;
+
+        }
+         #d2{
+         background-color: rgb(83, 122, 194);
+         width: 140px;
+         height: 20px;
+         position: absolute;
+         border-radius: 20px;
+
+        }
+    </style>
+</head>
+<body onload="myMove">
+        <h2>Animation Effect On the Two Div </h2>
+            <div id="d1"></div>
+            <div id="d2"></div>
+        <script>
+let p = 0 ;
+function animate(){
+   setInterval(animate, 1000);
+console.log("animate");
+    const ele = document.getElementById("d1");
+    let id = null;
+clearInterval(id);
+  id = setInterval(animate, 1200);
+ 
+
+    p++;    
+    ele.style.top = p+'px';
+     ele.style.left = p+'px';
+
+}
+
+function myMove() {
+  let id = null;
+  const elem = document.getElementById("d1");   
+  let pos = 0;
+  clearInterval(id);
+  id = setInterval(frame, 10);
+  function frame() {
+    if (pos == 525) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.top = pos + "px"; 
+      elem.style.left = pos + "px"; 
+    }
+  }
+}
+
+myMove();
+
+
+
+//d2
+
+
+
+let a = 0 ;
+function animate(){
+   setInterval(animate, 1000);
+console.log("animate");
+    const ele = document.getElementById("d2");
+    let id = null;
+clearInterval(id);
+  id = setInterval(animate, 1200);
+ 
+
+    a++; 
+    ele.style.right = a+'px';
+     ele.style.left = a+'px';
+
+}
+
+function myMove1() {
+  let id = null;
+  const elem = document.getElementById("d2");   
+  let pos1 = 0;
+  clearInterval(id);
+  id = setInterval(frame, 10);
+  function frame() {
+    if (pos1 == 1200) {
+      clearInterval(id);
+    } else {
+      pos1++; 
+      elem.style.right = pos1 + "px"; 
+      elem.style.left = pos1 + "px"; 
+    }
+  }
+}
+
+myMove1();
+        </script>
+</body>
+</html>
+
+
+

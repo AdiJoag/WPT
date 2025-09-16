@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disable Counter App</title>
+    <style>
+        .container {
+            padding: 30px;
+            margin: 8rem 20rem;
+            align-content: center;
+            height: 10rem;
+            width: 40rem;
+            text-align: center;
+            background-color: rgb(0, 0, 0);
+            border: solid;
+            border-radius: 1rem;
+            border-style: none;
+            color: white;
+            font-weight: 600;
+            font-family:'Courier New', Courier, monospace;
+        }
+        #btn {
+            height: 2rem;
+            width: 6rem;
+            border-radius: .2rem;
+            border-style: none;
+            background-color: rgb(51, 50, 50);
+            color:white;
+        }
+        #btn[disabled] { 
+            background-color:white;
+            cursor: not-allowed;
+            color: rgb(0, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>If user click 5 times then make that button readonly using style </p>
+        <h1 id="h">Counter is: 0</h1>
+        <button onclick="increment()" id="btn">CLICK ME!</button>
+    </div>
+    <script>
+        let count = 0;
+        function increment() {
+            count = count + 1;
+            document.getElementById("h").innerHTML = "Counter is: " + count;
+            
+            // This is the correct way to disable the button
+            if (count >= 5) {
+                document.getElementById("btn").disabled = true;
+            }
+        }
+    </script>
+</body>
+</html>
