@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Table</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#Btn').click(function(){
+                var num = parseInt($('#num').val());
+              
+                
+                
+                var table = '<table><thead><tr><th></th><th></th></tr></thead><tbody>';
+                for (var i = 1; i <= 10; i++) {
+                    var result = num * i;
+                    table += '<tr><td>' + num + ' * ' + i + ' = ' +'</td><td>'  + result + '</td></tr>';
+                }
+                table += '</tbody></table>';
+                
+                $('#Result').html(table);
+            });
+        });
+    </script>
+</head>
+<body>
+
+        <h2>Math Table </h2>
+   
+            <label for="num">Enter a number:</label>
+            <input type="number" id="num" >
+        
+           <button id="Btn">Show Table</button>
+        
+        <div id="Result"></div>
+    </div>
+
+</body>
+</html>

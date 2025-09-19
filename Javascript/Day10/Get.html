@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Demonstrate Ajax with JQuery Syntax </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+</head>
+<body>
+    <div>
+        <h1> Demonstrate Ajax with JQuery Syntax </h1>
+        <button id="b1">Get Content</button>
+    </div>
+    <script>
+        // This function is for the load function
+        $(document).ready(function() {
+            $("div").load("data.txt");
+        });
+
+        // This function is for the get function
+        $("#b1").click(function() {
+            $.get("data.txt", function(data, status) {
+            $("div").text(data);
+        });
+});
+      
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Class </title>
+    <!-- Latest jQuery version from Google CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <style>
+        .blue{
+            color: blue;
+        }
+        .red{
+            color: red;
+        }
+        .green{
+            color: rgb(0, 131, 33);
+        }
+        *{
+           background-color: black;
+            color: beige;  
+            font-family: 'Courier New', Courier, monospace;
+        }
+        button{
+            height: 2rem;
+            width: 6rem;
+            background-color: blue;
+            color: black;
+            border-radius: .2rem;
+            border-style: none;
+            margin: 1rem 35rem ;
+        }
+        button:hover{
+                background-color: rgb(255, 255, 255);
+                color: black;
+
+
+        }
+    </style>
+</head>
+<body>
+        <h1>By using Css class show the effects</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing 
+        elit. Cum dignissimos adipisci distinctio et voluptate
+        obcaecati sed laborum eveniet, eum velit quos sit doloremque. 
+        Voluptatem corporis aperiam eaque nihil, expedita recusandae,
+        dolorum blanditiis deserunt ullam itaque sint porro iusto dolore 
+        voluptatibus? Modi laboriosam consectetur et ullam consequuntur 
+        eius pariatur aperiam, dolor fugiat sunt cum.</p>
+
+        <h2>Toggle Css</h2>
+        <button>Click Me !</button>
+        <script>
+            $(document).ready(function(){
+                $("button").click(function(){
+                    $("h1,p,h2").toggleClass("blue");
+
+                $("button").click(function(){
+                    $("h1,p,h2").toggleClass("red");
+                    })
+                
+                $("button").click(function(){
+                    $("h1,p,h2").toggleClass("green");
+                    })
+                    
+                })
+            })
+
+        </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show by using jquery </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <style>
+        *{
+            background-color: rgb(178, 203, 231);
+            font-family:'Courier New', Courier, monospace;
+        }
+        #heading {
+            display: hidden;
+          
+            color: rgb(0, 0, 0);
+            text-align: center;
+        }
+        #hide,#show{
+            height: 3.2rem;
+            width: 12rem;
+            background-color: black;
+            color: aliceblue;
+            border-radius: .6rem;
+            border-style: none;
+            display: inline;
+            align-items: center;
+            cursor: pointer;
+
+        }
+        .container {
+            padding: 30;
+            margin: 8rem 20rem;
+            text-align: center;
+            border: solid;
+            border-style: none;
+        }
+        
+    </style>
+</head>
+
+<body>
+    
+    <h1 id="heading">This the query to show data which is hidden</h1>
+    <p id="heading">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti 
+        eos ipsa, reprehenderit repellendus doloribus laboriosam!
+         Rerum sint nam aperiam voluptas corrupti non at,
+    ratione totam accusantium asperiores fuga excepturi harum !</p>
+    <div class="container">
+        <button id="hide">Click for Hide Data</button>
+        <button id="show">Click for Show Data</button>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#hide").click(function () {
+                $("#heading").hide();
+            });
+
+            $("#show").click(function () {
+                $("#heading").show();
+            });
+        });
+    </script>
+</body>
+
+</html>

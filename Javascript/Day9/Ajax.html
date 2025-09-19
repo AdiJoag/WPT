@@ -1,0 +1,52 @@
+<!-- use ajax concept and display data in html page 
+  on button click from text file -->
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Using Ajax</title>
+    <style>
+        #btn{
+            height: 2rem;
+            width: 6rem;
+            color: aliceblue;
+            background-color: rgb(89, 104, 187);
+            border-radius: 0.3rem;
+            border-style: none;
+        }
+        #btn:hover{
+            background-color: black;
+            color: aliceblue;
+        }
+        #con{
+            padding: 6rem 30rem;
+            align-items: center;
+            display:block;
+        }
+        #btn{
+           margin: 0rem 8rem; 
+        }
+    </style>
+  </head>
+  <body>
+    <div id="con">
+
+        <h1>Show the data using Ajax</h1>
+        <button id="btn" onclick="ShowData()">Show Data </button>
+        </div>
+        <script>
+            function ShowData(){
+                let request = new XMLHttpRequest();
+                request.open("GET","https://jsonplaceholder.typicode.com/posts/1");
+                request.send();
+                request.onload = function(){
+                    console.log(this.responseText);
+                    console.log(JSON.parse(this.responseText));
+                    
+                }
+            }
+        </script>
+        
+  </body>
+  </html>

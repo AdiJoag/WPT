@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <title>Remove Class</title>
+  <style>
+    *{
+        background-color: black;
+        color: aliceblue;
+    }
+    .box {
+      width: 80rem;
+      height: 20rem;
+      background-color: lightgray;
+      margin: 20px;
+      text-align: center;
+      line-height: 150px;
+      font-weight: bold;
+      font-size: 18px;
+      color: rgb(0, 0, 0);
+      font-family: 'Courier New', Courier, monospace;
+    }
+    .red {
+      background-color: rgb(126, 224, 253);
+    }
+     button{
+            height: 2rem;
+            width: 10rem;
+            background-color: rgb(0, 162, 255);
+            color: rgb(255, 255, 255);
+            border-radius: .2rem;
+            border-style: none;
+            margin: 1rem 35rem ;
+            font-family: 'Courier New', Courier, monospace;
+
+        }
+        button:hover{
+                background-color: rgb(255, 255, 255);
+                color: black;
+
+
+        }
+  </style>
+</head>
+<body>
+
+  <div class="box red">
+    <h1>Remove Class using Jquery</h1>
+  </div>
+  <button >Remove Class</button>
+
+  <script>
+    $('button').click(function() {
+      $('.box').removeClass('red');
+    });
+  </script>
+
+</body>
+</html>

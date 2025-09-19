@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <title>Add Class</title>
+    <style>
+        *{
+            font-weight: 800;
+            font-family: 'Courier New', Courier, monospace;     
+            margin:  1rem 7rem;     
+            color: aliceblue;
+            background: #000;  
+        }
+        .highlight {
+             background-color: rgb(142, 184, 207);
+        }
+        button{
+            height: 2rem;
+            width: 6rem;
+            background-color: blue;
+            color: black;
+            border-radius: .2rem;
+            border-style: none;
+            margin: 1rem 35rem ;
+        }
+        button:hover{
+                background-color: rgb(255, 255, 255);
+                color: black;
+
+
+        }
+    </style>
+</head>
+<body>
+    <h1>To css by using Add Class JQuery </h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Ipsum maxime harum culpa assumenda veritatis optio rem, enim hic, excepturi voluptate 
+    minus unde id vero corrupti, ab fuga voluptatem et! Porro nihil delectus ea quae 
+    deleniti odit nulla nesciunt quis? Blanditiis reiciendis quae quisquam dicta repudiandae laudantium! 
+     Voluptatem amet nihil quos delectus architecto similique blanditiis pariatur.</p>
+     <h2>Add Class</h2>
+
+     <button>CLICK !</button>
+
+     <script>
+            $(document).ready(function(){
+                $("button").click(function(){
+                    $("h1,h2").addClass("highlight");
+
+                })
+            })
+
+        </script>
+</body>
+</html>

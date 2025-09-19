@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Display Using Ajax (Promise)</title>
+  <style>
+    #btn {
+      height: 2rem;
+      width: 6rem;
+      color: aliceblue;
+      background-color: rgb(89, 104, 187);
+      border-radius: 0.3rem;
+      border-style: none;
+      margin: 0rem 8rem;
+    }
+
+    #btn:hover {
+      background-color: black;
+      color: aliceblue;
+    }
+
+    #con {
+      padding: 6rem 30rem;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div id="con">
+    <h1>Show the data using Ajax</h1>
+    <button id="btn" onclick="fetchData()">Show Data</button>
+    <div id="output"></div>
+  </div>
+
+  <script>
+    function fetchData() {
+      getData("https://jsonplaceholder.typicode.com/posts/1")
+        .then(data => display(data))
+        .catch(error => display(error));
+    }
+
+    function getData(url) {
+      return new Promise((resolve, reject) => {
+        const request = new XMLHttpRequest();
+        request.open("GET", url, true);
+
+        request.onload = () => {
+          if (request.status >= 200 && request.status < 300) {
+            resolve(JSON.parse(request.responseText));
+          } else {
+            reject("Error: Failed to fetch data. Status " + request.status);
+          }
+        };
+
+        request.onerror = () => reject("Error: Network error");
+
+        request.send();
+      });
+    }
+
+    function display(data) {
+      const output = document.getElementById("output");
+      if (typeof data === "string") {
+        output.innerHTML = `<p>${data}</p>`;
+      } else {
+        output.innerHTML = `<h3>${data.title}</h3><p>${data.body}</p>`;
+      }
+    }
+  </script>
+</body>
+</html>

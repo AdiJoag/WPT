@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Line in Rows</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <style>
+          .container {
+            padding: 30px;
+            margin: 8rem 20rem;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>Multiple Line in Rows Format </h1>
+
+        <label for="">Enter the Data : </label>
+        <br><br>
+
+        <textarea name="ta" id="ta" Rows="4" cols="20"></textarea>
+        <br><br>
+
+        <button id="convert"> Convert !</button>
+
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#convert").click(function () {
+                let data = $("#ta").val();
+               console.log(data.length);
+                let l = data.length;
+                let c = l / 2;
+                console.log(data.slice(0, c));
+                console.log(data.slice(c + 1, 1));
+
+            });
+        });
+    </script>
+</body>
+
+</html>

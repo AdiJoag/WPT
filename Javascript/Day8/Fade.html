@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        * {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: aquamarine;
+        }
+
+        .container {
+            padding: 30px;
+            margin: 8rem 20rem;
+            text-align: center;
+        }
+
+        #heading {
+            display: none;
+        }
+
+        #btn, #btn1 {
+            height: 3rem;
+            width: 8rem;
+            font-weight: 500;
+            font-size: medium;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 id="heading">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, cupiditate !</h1>
+
+        <button id="btn">Fade In</button>
+        <button id="btn1">Fade Out</button>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#btn").click(function () {
+                $("#heading").fadeIn("slow"); 
+            });
+            $("#btn1").click(function () {
+                $("#heading").fadeOut("slow");
+            });
+        });
+    </script>
+</body>
+
+</html>

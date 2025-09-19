@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      
+        #container{
+            padding: 2rem;
+            margin: 8rem 22rem;
+            height: 14rem;
+            align-items: center;
+            text-align: center;
+            background-color: rgb(14, 14, 14);
+            color: white;
+            border-radius: 0.6rem;
+            border-style: none;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        #t1{
+            height: 1.8rem;
+            width: 28rem;
+            border-radius: 0.4rem; 
+            border-style: none;
+          
+        }
+        button{
+             height: 2rem;
+            width: 6rem;   
+            border-radius: 0.4rem; 
+            border-style: none;
+        }
+        button:hover{
+            background-color: rgb(87, 84, 84);
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+
+        <h2>Display data in html page on button click from text file </h2>
+        
+        <label for="">Enter the Details : </label>
+        <br><br>
+        <input type="text" required id="t1" placeholder="   please enter details....." >
+        <button onclick="valid()">Show Data</button>
+      
+        <br>
+        <p>The Data is : </p>
+        <p id="p1">Please show the data</p>
+    </div>
+        <script>
+            function display() {
+                let data = document.getElementById("t1").value;
+            if (data.trim() != "") {
+                document.getElementById("p1").innerText =
+                document.getElementById("t1").value;
+            } 
+            else {
+                document.getElementById("p1").innerText = "please enter data ";
+        }
+    }
+
+    function valid() {
+
+        let element = document.getElementById("t1");
+
+        console.log(element.checkValidity())
+
+        if (element.checkValidity()) {
+            document.getElementById("p1").innerText =
+                document.getElementById("t1").value;
+        } else {
+            document.getElementById("p1").innerText =
+                element.validationMessage
+        }
+    }
+    </script>
+</body>
+</html>

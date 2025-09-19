@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Try-Catch-Finally Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+
+    
+  </style>
+</head>
+<body>
+
+  <h1>Try-Catch</h1>
+
+  <button onclick="runTryCatch()">Click Me !</button>
+<br><br>
+  <div id="output"></div>
+
+  <script>
+    function runTryCatch() {
+      const output = document.getElementById('output');
+      output.textContent = ''; 
+      try {
+        output.textContent += "Inside try block.\n";
+
+        let result = 10 / 0; 
+        throw new Error("Oops! Something went wrong.");
+
+        output.textContent += "This line will not run.\n";
+      } catch (error) {
+        output.textContent += `Caught an error: ${error.message}\n`;
+      } finally {
+        output.textContent += "Finally block executed.\n";
+      }
+    }
+  </script>
+
+</body>
+</html>
