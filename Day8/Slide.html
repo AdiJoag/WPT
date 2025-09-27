@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Slide up And Slide Down</title>
+    <style>
+        *{
+            font-family: 'Courier New', Courier, monospace;
+            background-color: rgb(169, 226, 226);
+        }
+        .container {
+            padding: 30px;
+            margin: 8rem 20rem;
+            text-align: center;
+        }
+
+        #btn,#btn1{
+            height: 3rem;
+            width: 8rem;
+            font-weight: 500;
+            font-size: medium;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>The data for the Slide up and Slide Down</h1>
+
+        <button id="btn">Slide Up</button>
+        <button id="btn1">Slide Down</button>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $("#btn").click(function(){
+                $("h1").slideUp(300)
+            });
+            $("#btn1").click(function(){
+                $("h1").slideDown(500)
+            })
+           
+        })
+    </script>
+</body>
+</html>

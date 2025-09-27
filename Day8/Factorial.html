@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Factorial </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <h1>Factorial </h1>
+    <label for="input">Enter a number:</label>
+    <input type="number" id="input">
+    
+    <button id="Btn">Show</button>
+    
+    <p id="result"></p>
+
+    <script>
+        function factorial(n) {
+            let fact = 1;
+            for (let i = 1; i <= n; i++) {
+                fact = fact * i;
+            }
+            return fact;
+        }
+
+        $(document).ready(function() {
+            $('#input').on('change', function() {
+                const num = $(this).val();
+                if (num === "") {
+                    $('#result').text("");
+                    return;
+                }
+                const result = factorial(parseInt(num));
+                $('#result').text(`The factorial of ${num} is ${result}`);
+            });
+
+            $('#Btn').on('click', function() {
+                const num = $('#input').val();
+                if (num === "" || num < 1) {
+                    $('#allFactorials').text("Please enter a positive number.");
+                    return;
+                }
+
+                let allFactorials = "";
+                for (let i = 1; i <= num; i++) {
+                    allFactorials += `The factorial of ${i} is :`;
+                }
+                allFactorials += ` ${i} is ${factorial(i)}`;
+                $('#allFactorials').html(allFactorials); 
+            });
+        });
+    </script>
+
+</body>
+</html>
